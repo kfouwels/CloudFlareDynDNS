@@ -17,7 +17,7 @@ if recordID == 0: #Get record ID if not overridden
         recloadResponse = urllib.urlopen('https://www.cloudflare.com/api_json.html', data).read()
         recloadObj = json.loads(recloadResponse)
         
-        if recloadResponse.find(':'error'') == -1 :
+        if recloadResponse.find(':"error"') == -1 :
                 records = recloadObj['response']['recs']['objs']
                 for record in records:
                         if record['display_name'] == domainSub:
