@@ -4,9 +4,9 @@ import sys
 import json
 
 cfEmail = 'kfouwels@outlook.com'                        #Login Email Address
-cfAPIkey = 'aaaabbbbcccc111122223333444455556666z'      #API Key, from https://www.cloudflare.com/my-account
-domainBase = 'womboCombo.yolo'                          #Domain Name
-domainSub = 'womboCombo.yolo'                           #Subdomain to update, full domainBase for root
+cfAPIkey = '7b84202468d22ddf00480e5d015c9a72ca97a'      #API Key, from https://www.cloudflare.com/my-account
+domainBase = 'google.com'                               #Domain Name
+domainSub = 'google.com'                                #Subdomain to update, full domainBase for root
 recordType = 'A'                                        #Domain Type
 
 recordID = 0;                                           #Optional, use to override
@@ -29,13 +29,11 @@ if recordID == 0: #Get record ID if not overridden
 if recordID != 0:
         print 'recordID', recordID
 
-        #Get current device IP address [thanks github.com/lrehmann]
         f = urllib.urlopen('http://ip-api.com/xml')
         ipe = f.read()
         ip = ipe[ipe.find('<query><![CDATA[')+16:ipe.rfind(']]>',ipe.find('<query><![CDATA['))].strip()
         print 'IP Address:', ip
 
-        #Update via Cloudflare API
         data = {
                 'a': 'rec_edit',
                 'tkn': cfAPIkey,
