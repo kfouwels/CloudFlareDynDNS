@@ -1,6 +1,6 @@
-#Cloudflare DynDNS Auto Updater
+CF DynDNS Updater
 ==================================
 
-Python2 cronjob to auto update cloudflare DNS with the host IP.
+Python2 cronjob to  update cloudflare DNS from a host dynamic IP.
 
-Working as of latest API revision 27/07/14
+Working as of  API revision 27/07/14
